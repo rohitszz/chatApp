@@ -21,7 +21,7 @@ const DashBoard = () => {
   const [isSending, setIsSending] = useState(false);
   const [deleteAccountConfirmation, setDeleteAccountConfirmation] = useState(false);
   const [seen, setSeen ] = useState(false);
-
+  
   const socket = useRef(null);
   const messagesEndRef = useRef(null);
   const typingTimeout = useRef(null);
@@ -185,7 +185,7 @@ const DashBoard = () => {
   useEffect(() => {
     if (!email) return;
 
-    if (!socket.current) {
+    if (!socket.current) { 
       socket.current = io("https://chatapp-backend-1rq1.onrender.com", {
         transports: ["websocket"],
       });

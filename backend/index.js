@@ -10,6 +10,8 @@ app.use(express.json());
 const cookieParser = require("cookie-parser");
 app.use(cookieParser());
 
+app.set("trust proxy", 1);
+
 const PORT = process.env.PORT || 5000;
 
 

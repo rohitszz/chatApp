@@ -8,7 +8,7 @@ import Home from "./components/Home";
 import { Navigate } from "react-router-dom";
 import Otp from "./components/Otp";
 
-function App() {
+function App() { 
   const [isLoggedIn, setIsLoggedIn] = useState(false); 
   const [isSignedUp, setIsSignedUp] = useState(false);
   const [copyEmail, setcopyEmail] = useState("");

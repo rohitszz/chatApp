@@ -21,7 +21,7 @@ cloudinaryConnect();
 
 app.use(cors(
     {
-        origin: ['https://chatapp-1-grhu.onrender.com'],
+        origin: ['https://chatapp-frontend-8wgw.onrender.com'],
         credentials: true,
     }
 ))
@@ -36,7 +36,7 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
     cors: {
-        origin: ['https://chatapp-1-grhu.onrender.com'],
+        origin: ['https://chatapp-frontend-8wgw.onrender.com'],
         methods: ["GET", "POST"],
         credentials: true,
     }

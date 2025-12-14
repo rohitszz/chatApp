@@ -27,6 +27,12 @@ const Login = ({isLoggedIn, setIsLoggedIn}) => {
       })
      })
        const data = await res.json();
+            if(data.token){
+                    console.log("token");
+            }
+            else {
+                    console.log("token no present")
+            }
    if(data.success){
     setIsLoggedIn(true);
     navigate("/dashboard", { state: { token: data.token } });

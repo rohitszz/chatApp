@@ -156,6 +156,7 @@ const DashBoard = () => {
   useEffect(() => {
     const getUserProfile = async () => {
       try {
+        console.log("fetching user");
         const res = await fetch("https://chatapp-backend-1rq1.onrender.com/api/users/dashboard", {
           method: "GET",
           credentials: "include",
@@ -163,6 +164,7 @@ const DashBoard = () => {
         const fetcheData = await res.json();
         setData(fetcheData);
         setEmail(fetcheData.email);
+         console.log("success");
       } catch (error) {
         console.log("Error fetching user profile", error);
       }

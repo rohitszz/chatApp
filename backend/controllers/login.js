@@ -20,8 +20,8 @@ exports.login = async (req, res) => {
                    console.log("2");
                     res.cookie("loginAuthToken", loginToken, {
                         httpOnly: true,
-                        secure: false,
-                        sameSite: "lax",
+                        secure: true,
+                        sameSite: "none",
                         path:"/", 
                         maxAge: 7 * 24 * 60 * 60 * 1000
                     })

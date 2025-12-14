@@ -48,7 +48,7 @@ const DashBoard = () => {
     setSelectUser(true);
     setUserId(user);
 
-   const res = await fetch("http://localhost:5000/api/users/userprofilebyid", {
+   const res = await fetch("https://chatapp-4yro.onrender.com/api/users/userprofilebyid", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       credentials: "include",
@@ -82,7 +82,7 @@ const DashBoard = () => {
       if (!email || !userData) return;
       try {
         const result = await fetch(
-          "http://localhost:5000/api/users/messages/getmessages",
+          "https://chatapp-4yro.onrender.com/api/users/messages/getmessages",
           {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -106,7 +106,7 @@ const DashBoard = () => {
   const markMessagesSeen = async () => {
 
     try {
-         await fetch("http://localhost:5000/api/users/markseen", {
+         await fetch("https://chatapp-4yro.onrender.com/api/users/markseen", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         credentials: "include",
@@ -130,7 +130,7 @@ const DashBoard = () => {
     const markMessagesSeen = async () => {
     if(!userData)return ;
     try {
-         await fetch("http://localhost:5000/api/users/markseen", {
+         await fetch("https://chatapp-4yro.onrender.com/api/users/markseen", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         credentials: "include",
@@ -156,7 +156,7 @@ const DashBoard = () => {
   useEffect(() => {
     const getUserProfile = async () => {
       try {
-        const res = await fetch("http://localhost:5000/api/users/dashboard", {
+        const res = await fetch("https://chatapp-4yro.onrender.com/api/users/dashboard", {
           method: "GET",
           credentials: "include",
         });
@@ -186,7 +186,7 @@ const DashBoard = () => {
     if (!email) return;
 
     if (!socket.current) {
-      socket.current = io("http://localhost:5000", {
+      socket.current = io("https://chatapp-4yro.onrender.com", {
         transports: ["websocket"],
       });
       console.log("Socket connected");
@@ -262,7 +262,7 @@ const DashBoard = () => {
 
   const deleteAccount = async() => {
     if(!email)return ;
-   const res = await fetch("http://localhost:5000/api/users/deleteaccount", {
+   const res = await fetch("https://chatapp-4yro.onrender.com/api/users/deleteaccount", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
          body: JSON.stringify(
@@ -289,7 +289,7 @@ const DashBoard = () => {
     
 
     const res = await fetch(
-      "http://localhost:5000/api/users/upload-image", 
+      "https://chatapp-4yro.onrender.com/api/users/upload-image", 
       {
         method: "POST",
         body: formData,
@@ -314,7 +314,7 @@ const DashBoard = () => {
 
     socket.current.emit("send-message", messageData);
 
-    await fetch("http://localhost:5000/api/users/messages", {
+    await fetch("https://chatapp-4yro.onrender.com/api/users/messages", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       credentials: "include",

@@ -26,14 +26,10 @@ exports.login = async (req, res) => {
                         maxAge: 7 * 24 * 60 * 60 * 1000
                     })
                     console.log("2");
-            const userData = user.toObject();
-            delete userData.password;
-
+    
             return res.status(200).json({
                 success: true,
                  message: "User Logged in successfully",
-                token: loginToken,
-                userDetails: userData,
             }) 
         }
         else {

@@ -22,7 +22,7 @@ const Signup = ({isSignedUp, setIsSignedUp, copyEmail, setcopyEmail}) => {
   async function changeHandler (e){
     e.preventDefault();
     try{
-   const res = await fetch("https://chatapp-4yro.onrender.com/api/users/signuptoken", {
+   const res = await fetch("https://chatapp-backend-1rq1.onrender.com/api/users/signuptoken", {
       method: "POST",
       headers: { "Content-Type": "application/json"},
       body: JSON.stringify({

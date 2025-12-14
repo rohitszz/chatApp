@@ -3,7 +3,7 @@ const jwt = require("jsonwebtoken");
 require("dotenv").config();
 
 exports.userprofile = async (req, res) => {
-    try{
+    try{ console.log("1");
         const token = req.cookies.loginAuthToken || req.cookies.signupAuthToken;
         if(!token){
             return res.status(401).json({
@@ -11,11 +11,15 @@ exports.userprofile = async (req, res) => {
                 message:"Unauthorized Access",
             })
         }
+        console.log("1");
+        
         const decoded = jwt.verify(token, process.env.JWT_SECRET)
         const users = await Users.find({})
                                         .select("-password");
-
+        console.log("1");
+        
         const email = decoded.email;
+        console.log("1");
                                     
         return res.status(200).json({
             success:true,

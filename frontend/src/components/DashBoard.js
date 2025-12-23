@@ -473,7 +473,7 @@ const DashBoard = () => {
                            </span>
                            
                            )}
-                           { message._id !== messageId && 
+                           { message._id !== messageId && message.senderId === email &&
                            <button onClick={() => {setDeleteMessage(true); setTimeout( () => {setDeleteMessage(false); setMessageId(null)}, 2000); setMessageId(message._id) } }>
                             <MdDelete className="text-[10px] " />
                            </button>  }
